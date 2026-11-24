@@ -1,0 +1,18 @@
+﻿category,file_name,row_count,column_count,columns,file_size_kb
+master_data,bridge_bom.csv,232,7,bom_line_id | product_id | material_id | qty_per_finished_unit | scrap_rate_pct | effective_start_date | effective_end_date,14.78
+master_data,dim_date.csv,776,11,date_key | calendar_date | year | quarter | month | month_name | week_of_year | iso_year | day_of_week | day_name | is_weekend,46.52
+master_data,dim_material.csv,120,13,material_id | material_description | material_category | primary_supplier_id | preferred_plant_id | procurement_lead_time_days | safety_stock_days | minimum_order_qty | lot_multiple | standard_unit_cost | purchase_uom | abc_class | criticality,11.16
+master_data,dim_product.csv,40,9,product_id | product_description | product_family | manufacturing_plant_id | standard_batch_size | selling_uom | standard_sales_price | demand_pattern | lifecycle_status,3.8
+master_data,dim_site.csv,5,9,site_id | site_name | site_type | city | state_region | country | country_code | currency_code | timezone,0.54
+master_data,dim_supplier.csv,18,9,supplier_id | supplier_name | country | country_code | currency_code | default_lead_time_days | payment_terms_days | supplier_tier | is_active,1.16
+master_data,fact_fx_rate_monthly.csv,75,4,month_start | currency_code | rate_to_aud | rate_type,3.69
+transaction_data,fact_cycle_count.csv,3000,12,count_id | count_date | site_id | item_type | item_id | system_qty | counted_qty | variance_qty | unit_cost | variance_value | count_type | recount_required,254.49
+transaction_data,fact_demand_daily.csv,87600,6,demand_date | site_id | product_id | demand_qty | demand_source | event_flag,4924.78
+transaction_data,fact_inventory_movement.csv,12000,9,movement_id | transaction_date | site_id | item_type | item_id | movement_type | quantity_signed | reference_id | user_id,1035.5
+transaction_data,fact_inventory_snapshot.csv,9000,10,snapshot_date | site_id | item_type | item_id | on_hand_qty | allocated_qty | available_qty | unit_cost | inventory_value | last_movement_date,614.6
+transaction_data,fact_production_actual_weekly.csv,4160,6,production_week_start | plant_id | product_id | actual_good_qty | scrap_qty | downtime_hours,149.47
+transaction_data,fact_purchase_order_line.csv,960,15,po_line_id | po_number | po_line_number | supplier_id | plant_id | material_id | order_date | promised_date | order_qty | received_qty | open_qty | actual_last_receipt_date | po_status | unit_price | currency_code,97.06
+transaction_data,fact_transfer_order.csv,1400,13,transfer_id | product_id | origin_site_id | destination_site_id | order_date | ship_date | expected_arrival_date | actual_arrival_date | shipped_qty | received_qty | freight_cost | currency_code | transfer_status,141.31
+planning_data,fact_production_plan_weekly.csv,4680,6,plan_week_start | plant_id | product_id | planned_production_qty | plan_status | planning_version,257.93
+planning_data,mrp_sample_order_proposals.csv,796,13,plant_id | material_id | material_description | need_week | suggested_receipt_qty | suggested_release_date | lead_time_days | minimum_order_qty | lot_multiple | primary_supplier_id | priority | release_overdue_as_of_2026_11_15 | recommended_action,89.02
+planning_data,mrp_sample_weekly_netting.csv,1224,14,week_start | plant_id | material_id | opening_available_qty | scheduled_receipts_qty | gross_requirement_qty | pre_planned_order_pab_qty | safety_stock_target_qty | net_requirement_qty | planned_order_receipt_qty | projected_available_balance_qty | planned_order_release_date | lead_time_days | release_date_before_asof_flag,111.73
